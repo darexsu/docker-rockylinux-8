@@ -1,4 +1,4 @@
-# Dokerfile: Rockylinux-8 for Molecule CI 
+# Dockerfile: Rockylinux-8 for Molecule CI 
 
 [![Build](https://github.com/darexsu/docker-rockylinux-8/actions/workflows/build.yml/badge.svg)](https://github.com/darexsu/docker-rockylinux-8/actions/workflows/build.yml)
 [![Docker pulls](https://img.shields.io/docker/pulls/darexsu/molecule-rockylinux-8.svg?)](https://hub.docker.com/r/darexsu/molecule-rockylinux-8/)
