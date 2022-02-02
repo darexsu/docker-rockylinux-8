@@ -3,7 +3,7 @@
 [![Build](https://github.com/darexsu/docker-rockylinux-8/actions/workflows/build.yml/badge.svg)](https://github.com/darexsu/docker-rockylinux-8/actions/workflows/build.yml)
 [![Docker pulls](https://img.shields.io/docker/pulls/darexsu/molecule-rockylinux-8.svg?)](https://hub.docker.com/r/darexsu/molecule-rockylinux-8/)
 
-RockyLinux-8 for Ansible Playbooks testing
+Pre-build RockyLinux 8. Image already has Ansible inside, so Molecule doesn't need to waste time building it.
 
 ### Example molecule.yml
 ```yaml
@@ -18,7 +18,8 @@ platforms:
     command: ${MOLECULE_DOCKER_COMMAND:-""}
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    privileged: true    
+    privileged: true
+    pre_build_image: true
 provisioner:
   name: ansible
   playbooks:
