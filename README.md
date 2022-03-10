@@ -14,14 +14,21 @@ driver:
   name: docker
 platforms:
   - name: instance
-    image: "darexsu/docker-rockylinux-8:latest"
+    image: "darexsu/molecule-rockylinux-8:latest"
     command: ${MOLECULE_DOCKER_COMMAND:-""}
+    tmpfs:
+      - /run
+      - /tmp
     volumes:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
-    privileged: true
+    privileged: false
     pre_build_image: true
 provisioner:
   name: ansible
+  inventory:
+    host_vars:
+      instance:
+        ansible_user: ansible
   playbooks:
-    converge: converge.yml
+    converge: ${MOLECULE_PLAYBOOK:-converge.yml}
 ```
